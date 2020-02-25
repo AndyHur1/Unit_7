@@ -32,7 +32,23 @@ public static ArrayList<Double> firstAndLast(){
         input_num = scan.nextDouble();
         arrayListValue.add(input_num);
     }
-    return arrayListValue;
+    return arrayList(arrayListValue);
+
+}
+public static ArrayList<Double> getNumbers (){
+    int a = 0;
+    ArrayList<Double> arrayListValue = new ArrayList<>();
+    while (a<3){
+        System.out.println("Please Enter your decimal number" );
+        double input_num = scan.nextDouble();
+        arrayListValue.add(input_num);
+    }
+    return arrayList(arrayListValue);
+}
+public static ArrayList<Double> arrayList (ArrayList<Double> numbers){
+    ArrayList<Double> ArrayList = numbers;
+    int a = 0;
+
 
 }
 }
