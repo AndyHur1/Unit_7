@@ -28,19 +28,28 @@ public class ArrayListMethods {
     public static ArrayList<Double> firstAndLast() {
         double input_num = 0;
         ArrayList<Double> arrayListValue = new ArrayList<Double>();
-        while (input_num != 0) {
+        ArrayList<Double> arrayListNewValue= new ArrayList<>();
+        while (true) {
             System.out.println("Please Enter a decimal number");
             input_num = scan.nextDouble();
+            if (input_num==0) {
+                break;
+            }
             arrayListValue.add(input_num);
+
         }
-        return arrayListValue;
+
+        arrayListNewValue.add((double) arrayListValue.size());
+        arrayListNewValue.add(arrayListValue.get(0));
+        arrayListNewValue.add(arrayListValue.get(arrayListValue.size()-1));
+        return arrayListNewValue;
 
     }
 
     public static ArrayList<Double> getNumbers() {
-        int a = 0;
+
         ArrayList<Double> arrayListValue = new ArrayList<>();
-        while (a < 3) {
+        for (int a=0; a<3; a++){
             System.out.println("Please Enter your decimal number");
             double input_num = scan.nextDouble();
             arrayListValue.add(input_num);
