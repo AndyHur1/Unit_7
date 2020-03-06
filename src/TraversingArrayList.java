@@ -42,7 +42,34 @@ public class TraversingArrayList {
 
         Scanner presetData= new Scanner(new File("src/numbers.txt"));
         ArrayList<Integer> arrayDataStorage=new ArrayList<>();
-        int
+        int largestNum=arrayDataStorage.get(0);
+        int indexOfSmallestNum=0;
+        int smallestNum=arrayDataStorage.get(0);
+        int indexOfLargestNum=0;
+        for(int i=0; i<arrayDataStorage.size();i++) {
+
+
+            if(arrayDataStorage.get(i)>smallestNum) {
+                smallestNum = arrayDataStorage.get(i);
+                indexOfSmallestNum=i;
+            }
+            if(arrayDataStorage.get(i)<largestNum) {
+                largestNum =arrayDataStorage.get(i);
+                indexOfLargestNum=i;
+            }
+
+        }
+
+        arrayDataStorage.remove(indexOfSmallestNum);
+        arrayDataStorage.add(0,largestNum);
+
+        arrayDataStorage.remove(indexOfLargestNum+1);
+        arrayDataStorage.add(arrayDataStorage.size(),smallestNum);
+
+
+        return arrayDataStorage;
+    }
+
 
 
 }
