@@ -51,7 +51,7 @@ public class TraversingTest {
 
     }
 
-    /*@Test
+    @Test
     public void testRectangleArea() {
         ArrayList<Rectangle> r = new ArrayList<>();
         r.add(new Rectangle(5, 6));
@@ -63,5 +63,5 @@ public class TraversingTest {
 
         assertEquals(17.22, ListOfRectangles.findAverage(r), 0.1);
 
-    }*/
+    }
 }
