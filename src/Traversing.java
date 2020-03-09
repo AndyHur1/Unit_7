@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class TraversingArrayList {
+public class Traversing {
     private static Scanner scan = new Scanner(System.in);
 
     public static ArrayList<String> getStates() {
@@ -12,7 +12,7 @@ public class TraversingArrayList {
         while (true) {
             System.out.println("Enter the name of a state or \"stop\" to quit: ");
             String states = scan.next();
-            if (states.equals("stop")) {
+            if (states.equals("Stop")) {
                 break;
             }
             States.add(states);
@@ -42,6 +42,9 @@ public class TraversingArrayList {
 
         Scanner presetData= new Scanner(new File("src/numbers.txt"));
         ArrayList<Integer> arrayDataStorage=new ArrayList<>();
+        while (presetData.hasNextInt()) {
+            arrayDataStorage.add(presetData.nextInt());
+        }
         int largestNum=arrayDataStorage.get(0);
         int indexOfSmallestNum=0;
         int smallestNum=arrayDataStorage.get(0);
