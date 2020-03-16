@@ -19,60 +19,67 @@ public class Algorithms {
             file2List.add(file2.nextInt());
         }
         for (int a=0; a<file1List.size();a++){
-            int c_num= file1List.get(a)
-            for (int b=0; b<file2List.size();a++){
-                if (file1List.get(a)==file2List.get(b)){
-                    dup_List.add(file1List.get(a));
+            int currentNum = file1List.get(a);
+            for(int i2=0;i2<file2List.size();i2++) {
+                int testingNum=file2List.get(i2);
+                if(currentNum==testingNum) {
+                    dup_List.add(currentNum);
                 }
             }
         }
         return dup_List;
     }
-    public static ArrayList<String> fileDuplicatesTwo() throws IOException{
-        Scanner name_file = new Scanner(new File("names.txt"));
-        ArrayList<String> name_list = new ArrayList<>();
-        ArrayList<String> no_dup_name = new ArrayList<>();
+    public static ArrayList<String> fileDuplicatesTwo() throws IOException {
 
-        while (name_file.hasNext()){
-            name_list.add(name_file.next());
+        Scanner p_Data= new Scanner(new File("names.txt"));
+        ArrayList<String> namesList = new ArrayList<>();
+
+        while (p_Data.hasNext()) {
+            namesList.add(p_Data.next());
         }
-        while (name_file.hasNext()){
-            no_dup_name.add(name_file.next());
-        }
-        for (int a=0; a<name_list.size(); a++){
-            for (int b=0; b<name_list.size(); b++){
-                if (a!=b&&name_list.get(a).equals(name_list.get(b))){
-                    no_dup_name.remove(a);
+        System.out.println(namesList);
+
+        for(int i=0; i<namesList.size();i++) {
+            String c_String= namesList.get(i);
+            for(int i2=i+1; i2<namesList.size();i2++) {
+                String testingString= namesList.get(i2);
+                if(c_String.equals(testingString)) {
+                    namesList.remove(i2);
+                    i2--;
+
                 }
             }
         }
-        return no_dup_name;
+
+        return namesList;
     }
+
+
     public static ArrayList<Integer> orderedList() throws IOException{
         Scanner file1= new Scanner(new File("file1.txt"));
-        ArrayList<Integer> createdOrderedList= new ArrayList();
+        ArrayList<Integer> OrderedList= new ArrayList();
 
 
-        System.out.println("The Size of newly created list by default is " +createdOrderedList.size());
+        System.out.println("The Size of newly created list by default is " +OrderedList.size());
 
         while(file1.hasNext()){
-            if(createdOrderedList.size()==0) {
-                createdOrderedList.add(file1.nextInt());
+            if(OrderedList.size()==0) {
+                OrderedList.add(file1.nextInt());
             }
 
             int numToBeAdded = file1.nextInt();
 
 
-            for(int i = 0; i < createdOrderedList.size(); i++){
-                int testingNum=createdOrderedList.get(i);
+            for(int i = 0; i < OrderedList.size(); i++){
+                int testingNum=OrderedList.get(i);
 
 
                 if(numToBeAdded < testingNum) {
-                    createdOrderedList.add(i, numToBeAdded);
+                    OrderedList.add(i, numToBeAdded);
                     break;
                 }
-                if(i == createdOrderedList.size() - 1){
-                    createdOrderedList.add(numToBeAdded);
+                if(i == OrderedList.size() - 1){
+                    OrderedList.add(numToBeAdded);
                     break;
                 }
 
@@ -80,9 +87,11 @@ public class Algorithms {
         }
 
 
-        return createdOrderedList;
+        return OrderedList;
 
     }
 
-    }
+
+
+}
 
