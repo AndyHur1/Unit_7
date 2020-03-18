@@ -20,8 +20,8 @@ public class Algorithms {
         }
         for (int a=0; a<file1List.size();a++){
             int currentNum = file1List.get(a);
-            for(int i2=0;i2<file2List.size();i2++) {
-                int testingNum=file2List.get(i2);
+            for(int b=0;b<file2List.size();b++) {
+                int testingNum=file2List.get(b);
                 if(currentNum==testingNum) {
                     dup_List.add(currentNum);
                 }
@@ -70,15 +70,15 @@ public class Algorithms {
             int numToBeAdded = file1.nextInt();
 
 
-            for(int i = 0; i < OrderedList.size(); i++){
-                int testingNum=OrderedList.get(i);
+            for(int a= 0; a < OrderedList.size(); a++){
+                int testingNum=OrderedList.get(a);
 
 
                 if(numToBeAdded < testingNum) {
-                    OrderedList.add(i, numToBeAdded);
+                    OrderedList.add(a, numToBeAdded);
                     break;
                 }
-                if(i == OrderedList.size() - 1){
+                if(a == OrderedList.size() - 1){
                     OrderedList.add(numToBeAdded);
                     break;
                 }
