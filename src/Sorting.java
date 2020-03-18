@@ -9,10 +9,7 @@ public class Sorting {
         Scanner file_Compare = new Scanner(new File("sortedData.txt"));
 
         ArrayList<Integer> file_CompareList = new ArrayList<>();
-
-
         while (file_Compare.hasNextInt()) {
-
             file_CompareList.add(file_Compare.nextInt());
         }
         return file_CompareList;
@@ -20,12 +17,10 @@ public class Sorting {
 
     public static boolean isSorted(ArrayList<Integer> arr) {
 
-
-
         for(int i=0; i<arr.size()-1;i++) {
             int c_Num= arr.get(i) ;
-            int testingNum= arr.get(i+1);
-            if(c_Num>testingNum) {
+            int test_Num= arr.get(i+1);
+            if(c_Num>test_Num) {
                 return false;
             }
 

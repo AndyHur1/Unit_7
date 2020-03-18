@@ -1,32 +1,25 @@
 public class Donor {
     private String donorName;
-    private double donationAmount;
+    private double D_Amount;
 
     public Donor(String name, double amount) {
         this.donorName = name;
-        this.donationAmount = amount;
+        this.D_Amount = amount;
     }
     public Donor() {
-        this("Joe",5);
-    }
-
-    public String getName() {
-        return donorName;
+        this("Andy",5);
     }
 
     public double getAmount() {
-        return donationAmount;
+        return D_Amount;
     }
-
+    public String getName() {
+        return donorName;
+    }
     public void setAmount(double donationAmount) {
-        this.donationAmount = donationAmount;
+        this.D_Amount = donationAmount;
     }
-
-    public void setName(String donorName) {
-        this.donorName = donorName;
-    }
-
     public String toString() {
-        return "The Donors name is: " + donorName + ".\nThis Donor donated: $" + donationAmount + ".";
+        return "The Donors name is: "+donorName+".\nThis Donor donated: $"+D_Amount+".";
     }
 }

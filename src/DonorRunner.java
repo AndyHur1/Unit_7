@@ -6,35 +6,35 @@ import java.util.ArrayList;
 public class DonorRunner {
 
     public static ArrayList<Donor> readFile() throws IOException {
-        Scanner get_D_File= new Scanner(new File("donors.txt"));
+        Scanner get_File= new Scanner(new File("donors.txt"));
 
         ArrayList<Donor> ObjectArrayList= new ArrayList<>();
 
-        while(get_D_File.hasNextLine()) {
-            String donorName= get_D_File.next();
-            double donationAmount= get_D_File.nextDouble();
+        while(get_File.hasNextLine()) {
+            String donorName= get_File.next();
+            double donationAmount= get_File.nextDouble();
             ObjectArrayList.add(new Donor(donorName,donationAmount));
         }
-        for(int i=0; i<ObjectArrayList.size();i++) {
-            System.out.println(ObjectArrayList.get(i).getName() + " " +
-                    ObjectArrayList.get(i).getAmount());
-            System.out.println(ObjectArrayList.get(i));
+        for(int a=0; a<ObjectArrayList.size();a++) {
+            System.out.println(ObjectArrayList.get(a).getName() + " " +
+                    ObjectArrayList.get(a).getAmount());
+            System.out.println(ObjectArrayList.get(a));
         }
         return ObjectArrayList;
     }
 
     public static ArrayList<Donor> sortDonors(ArrayList<Donor>donorObject) {
 
-        for(int i=0; i<donorObject.size();i++) {
-            int indexOfLargestNum=i;
-            for(int i2=i+1; i2<donorObject.size();i2++) {
-                if(donorObject.get(i2).getAmount()>donorObject.get(indexOfLargestNum).getAmount()) {
-                    indexOfLargestNum=i2;
+        for(int a=0; a<donorObject.size();a++) {
+            int Biggest_Num=a;
+            for(int b=a+1; b<donorObject.size();b++) {
+                if(donorObject.get(b).getAmount()>donorObject.get(Biggest_Num).getAmount()) {
+                    Biggest_Num=b;
                 }
             }
-            Donor toBeSwapped = donorObject.get(i);
-            donorObject.set(i,donorObject.get(indexOfLargestNum));
-            donorObject.set(indexOfLargestNum,toBeSwapped);
+            Donor toBeSwapped = donorObject.get(a);
+            donorObject.set(a,donorObject.get(Biggest_Num));
+            donorObject.set(Biggest_Num,toBeSwapped);
 
         }
         return donorObject;
